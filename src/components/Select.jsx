@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Select extends React.Component {
-  handleChange = (e) => {
-    this.props.onSelectChange(e.target.value);
+  handleChange = (event) => {
+    this.props.onSelectChange(this.props.name, event.target.value);
   };
 
   render() {
@@ -15,7 +15,7 @@ class Select extends React.Component {
         </select>
       </div>
     );
-};
+  };
 }
 
 class Option extends React.Component {
@@ -28,4 +28,3 @@ class Option extends React.Component {
 }
 
 export default Select;
-

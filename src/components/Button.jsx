@@ -3,19 +3,19 @@ import React from 'react';
 class Button extends React.Component {
   buttonStyle =  {
     width: '100px',
-    height: '30px',
-    color: 'blue',
-    backgroundColor: 'yellow'
+    height: '40px',
+    color: 'yellow',
+    backgroundColor: 'blue'
   };
 
   handleClick = () => {
-    alert("You prefer " + this.props.car);
+    const item = this.props.item.charAt(0).toUpperCase() + this.props.item.slice(1);
+    alert("You prefer " + item + " for " + this.props.money);
   };
 
   render() {
     return(<button style={this.buttonStyle} onClick={this.handleClick}>{this.props.caption}</button>);
-};
+  };
 }
 
 export default Button;
-
