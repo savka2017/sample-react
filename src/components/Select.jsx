@@ -1,16 +1,12 @@
 import React from 'react';
 
 class Select extends React.Component {
-  handleChange = (event) => {
-    this.props.onSelectChange(this.props.name, event.target.value);
-  };
-
   render() {
     const listItems = this.props.items.map((item) => <Option value={item}/>);
 
     return(
       <div>
-        <select onChange={this.handleChange}>
+        <select onChange={this.props.handleChange} name={this.props.name}>
           {listItems}
         </select>
       </div>

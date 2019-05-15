@@ -11,21 +11,22 @@ class App extends React.Component {
     this.state = {car: cars[0], currency: currencies[0]};
   };
 
-  handleSelectChange = (name, value) => {
+  handleChange = (event) => {
+    let {name, value} = event.target;
     this.setState({[name]: value});
   };
 
   render() {
     return(
-      <div>
+      <>
         <p>This is sample react app</p>
         <p>Car's model:</p>
-        <Select name="car" items={cars} onSelectChange={this.handleSelectChange}/>
+        <Select name="car" items={cars} handleChange={this.handleChange}/>
         <p>Currency:</p>
-        <Select name="currency" items={currencies} onSelectChange={this.handleSelectChange}/>
+        <Select name="currency" items={currencies} handleChange={this.handleChange}/>
         <p>Select items above and click button</p>
       	<Button caption='Click here' item = {this.state.car} money={this.state.currency}/>
-      </div>
+      </>
     );
   };
 }
